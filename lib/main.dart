@@ -29,6 +29,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomnePageState extends State<MyHomePage> {
+  /// 정수형 타입의 count 변수 0으로 초기화한다.
+  int count = 0;
+
   /// Scaffold() : 앱을 만드는 뼈대가 되는 기본 위젯
   @override
   Widget build(BuildContext context) {
@@ -42,7 +45,8 @@ class _MyHomnePageState extends State<MyHomePage> {
       /// Center() 속성을 이용해 0을 중앙에 나타낸다.
       body: Center(
         child: Text(
-          '0',
+          /// count 변수의 값을 글자 형태로 표시할 수 있다.
+          '$count',
 
           /// TextStyle() 속성으로 폰트 색상과 크기를 설정한다.
           style: TextStyle(
@@ -55,8 +59,11 @@ class _MyHomnePageState extends State<MyHomePage> {
       /// floatingActionButton은 보통 아이콘을 넣는다.
       floatingActionButton: FloatingActionButton(
           onPressed: () {
-            /// '+' 아이콘을 클릭하면, Run 탭에서 '클릭'을 확인할 수 있다.
-            print('클릭');
+            /// 화면 갱신, 상태 변화가 생겼을 때 바로 반영한다.
+            setState(() {
+              /// '+' 아이콘을 클릭하면, count 값이 1 증가한다.
+              count++;
+            });
           },
 
           /// '+' 아이콘을 넣는다.
