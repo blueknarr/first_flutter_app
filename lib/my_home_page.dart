@@ -28,101 +28,104 @@ class _MyHomnePageState extends State<MyHomePage> {
 
       /// Center() 속성을 이용해 0을 중앙에 나타낸다.
       body: Center(
-        /// 화면에 나타내고 싶은 텍스트를 나란히 위,아래로 보여준다.
-        child: Column(
-          /// 메인 방향 가운데 정렬, Column : 위 ~ 아래, Row: 왼쪽 ~ 오른쪽
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              color: Colors.red,
-              width: 100,
-              height: 100,
-            ),
-
-            /// SizedBox() : 위젯 간 공간을 만들고 싶을 때 사용한다. Container보다 성능이 좋다.
-            SizedBox(height: 30),
-            Container(height: 30),
-            Text(
-              '숫자',
-
-              /// TextStyle() 속성으로 폰트 색상과 크기를 설정한다.
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 40,
-              ),
-            ),
-            Text(
-              /// count 변수의 값을 글자 형태로 표시할 수 있다.
-              '$number',
-
-              /// TextStyle() 속성으로 폰트 색상과 크기를 설정한다.
-              style: TextStyle(
+        /// 화면 스크롤
+        child: SingleChildScrollView(
+          /// 화면에 나타내고 싶은 텍스트를 나란히 위,아래로 보여준다.
+          child: Column(
+            /// 메인 방향 가운데 정렬, Column : 위 ~ 아래, Row: 왼쪽 ~ 오른쪽
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
                 color: Colors.red,
-                fontSize: 70,
-              ),
-            ),
-
-            /// 일반적인 버튼
-            ElevatedButton(
-              onPressed: () {
-                /// 버튼을 클릭하면 run 탭에 ElevatedButton 출력
-                print('ElevatedButton');
-              },
-              child: Text('ElevatedButton'),
-            ),
-
-            /// 글자로 된 버튼
-            TextButton(
-              onPressed: () {},
-              child: Text('TextButton'),
-            ),
-
-            /// 외곽선이 있는 버튼
-            OutlinedButton(
-              onPressed: () {},
-              child: Text('OutlinedButton'),
-            ),
-
-            /// 입력창
-            TextField(
-              /// 입력창 모양 꾸미기
-              decoration: InputDecoration(
-                labelText: '글자',
-                border: OutlineInputBorder(),
+                width: 100,
+                height: 100,
               ),
 
-              /// 입력창에서 글자를 입력할 때마다 text에 들어온다.
-              onChanged: (text) {
-                print(text);
-              },
-            ),
+              /// SizedBox() : 위젯 간 공간을 만들고 싶을 때 사용한다. Container보다 성능이 좋다.
+              SizedBox(height: 100),
+              Container(height: 30),
+              Text(
+                '숫자',
 
-            /// 인터넷 상에 있는 사진을 가져온다.
-            Container(
-              color: Colors.red,
-
-              /// Padding을 이용해 사면을 빨간선으로 감싼다.
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.network(
-                  'https://velog.velcdn.com/images/jintak0401/post/07c4b595-178e-4b51-ae7d-f545bc14cfdc/dart.png',
-                  width: 100,
-                  height: 100,
-                  fit: BoxFit.cover,
+                /// TextStyle() 속성으로 폰트 색상과 크기를 설정한다.
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 40,
                 ),
               ),
-            ),
+              Text(
+                /// count 변수의 값을 글자 형태로 표시할 수 있다.
+                '$number',
 
-            /// assets 폴더에 있는 사진을 가져온다.
-            Image.asset(
-              'assets/dart.png',
-              width: 100,
-              height: 100,
-              fit: BoxFit.cover,
-            ),
+                /// TextStyle() 속성으로 폰트 색상과 크기를 설정한다.
+                style: TextStyle(
+                  color: Colors.red,
+                  fontSize: 70,
+                ),
+              ),
 
-            /// 기본적으로 아무것도 없는 위젯
-          ],
+              /// 일반적인 버튼
+              ElevatedButton(
+                onPressed: () {
+                  /// 버튼을 클릭하면 run 탭에 ElevatedButton 출력
+                  print('ElevatedButton');
+                },
+                child: Text('ElevatedButton'),
+              ),
+
+              /// 글자로 된 버튼
+              TextButton(
+                onPressed: () {},
+                child: Text('TextButton'),
+              ),
+
+              /// 외곽선이 있는 버튼
+              OutlinedButton(
+                onPressed: () {},
+                child: Text('OutlinedButton'),
+              ),
+
+              /// 입력창
+              TextField(
+                /// 입력창 모양 꾸미기
+                decoration: InputDecoration(
+                  labelText: '글자',
+                  border: OutlineInputBorder(),
+                ),
+
+                /// 입력창에서 글자를 입력할 때마다 text에 들어온다.
+                onChanged: (text) {
+                  print(text);
+                },
+              ),
+
+              /// 인터넷 상에 있는 사진을 가져온다.
+              Container(
+                color: Colors.red,
+
+                /// Padding을 이용해 사면을 빨간선으로 감싼다.
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.network(
+                    'https://velog.velcdn.com/images/jintak0401/post/07c4b595-178e-4b51-ae7d-f545bc14cfdc/dart.png',
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+
+              /// assets 폴더에 있는 사진을 가져온다.
+              Image.asset(
+                'assets/dart.png',
+                width: 100,
+                height: 100,
+                fit: BoxFit.cover,
+              ),
+
+              /// 기본적으로 아무것도 없는 위젯
+            ],
+          ),
         ),
       ),
 
