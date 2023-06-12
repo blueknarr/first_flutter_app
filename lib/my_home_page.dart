@@ -14,6 +14,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomnePageState extends State<MyHomePage> {
   /// 정수형 타입의 count 변수 0으로 초기화한다.
   int number = 10;
+  String text = '';
 
   /// Scaffold() : 앱을 만드는 뼈대가 되는 기본 위젯
   @override
@@ -71,6 +72,20 @@ class _MyHomnePageState extends State<MyHomePage> {
             OutlinedButton(
               onPressed: () {},
               child: Text('OutlinedButton'),
+            ),
+
+            /// 입력창
+            TextField(
+              /// 입력창 모양 꾸미기
+              decoration: InputDecoration(
+                labelText: '글자',
+                border: OutlineInputBorder(),
+              ),
+
+              /// 입력창에서 글자를 입력할 때마다 text에 들어온다.
+              onChanged: (text) {
+                print(text);
+              },
             ),
           ],
         ),
