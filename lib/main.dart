@@ -51,6 +51,16 @@ class _MyHomnePageState extends State<MyHomePage> {
           ),
         ),
       ),
+
+      /// floatingActionButton은 보통 아이콘을 넣는다.
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            /// '+' 아이콘을 클릭하면, Run 탭에서 '클릭'을 확인할 수 있다.
+            print('클릭');
+          },
+
+          /// '+' 아이콘을 넣는다.
+          child: Icon(Icons.add)),
     );
   }
 }
