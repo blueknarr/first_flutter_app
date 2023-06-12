@@ -13,7 +13,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomnePageState extends State<MyHomePage> {
   /// 정수형 타입의 count 변수 0으로 초기화한다.
-  int count = 0;
+  int number = 10;
 
   /// Scaffold() : 앱을 만드는 뼈대가 되는 기본 위젯
   @override
@@ -22,7 +22,7 @@ class _MyHomnePageState extends State<MyHomePage> {
       /// AppBar() 속성을 이용해 화면 상단에 Bar를 생성한다.
       appBar: AppBar(
         /// Text() 위젯을 사용해 글씨를 나타낸다.
-        title: Text('홈'),
+        title: Text('카운터'),
       ),
 
       /// Center() 속성을 이용해 0을 중앙에 나타낸다.
@@ -43,7 +43,7 @@ class _MyHomnePageState extends State<MyHomePage> {
             ),
             Text(
               /// count 변수의 값을 글자 형태로 표시할 수 있다.
-              '$count',
+              '$number',
 
               /// TextStyle() 속성으로 폰트 색상과 크기를 설정한다.
               style: TextStyle(
@@ -82,7 +82,7 @@ class _MyHomnePageState extends State<MyHomePage> {
             /// 화면 갱신, 상태 변화가 생겼을 때 바로 반영한다.
             setState(() {
               /// '+' 아이콘을 클릭하면, count 값이 1 증가한다.
-              count++;
+              number++;
             });
           },
 
