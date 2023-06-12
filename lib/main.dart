@@ -44,15 +44,31 @@ class _MyHomnePageState extends State<MyHomePage> {
 
       /// Center() 속성을 이용해 0을 중앙에 나타낸다.
       body: Center(
-        child: Text(
-          /// count 변수의 값을 글자 형태로 표시할 수 있다.
-          '$count',
+        /// 화면에 나타내고 싶은 텍스트를 나란히 위,아래로 보여준다.
+        child: Column(
+          /// 메인 방향 가운데 정렬, Column : 위 ~ 아래, Row: 왼쪽 ~ 오른쪽
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '숫자',
 
-          /// TextStyle() 속성으로 폰트 색상과 크기를 설정한다.
-          style: TextStyle(
-            color: Colors.red,
-            fontSize: 70,
-          ),
+              /// TextStyle() 속성으로 폰트 색상과 크기를 설정한다.
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 40,
+              ),
+            ),
+            Text(
+              /// count 변수의 값을 글자 형태로 표시할 수 있다.
+              '$count',
+
+              /// TextStyle() 속성으로 폰트 색상과 크기를 설정한다.
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 70,
+              ),
+            ),
+          ],
         ),
       ),
 
