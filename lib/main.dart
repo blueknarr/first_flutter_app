@@ -68,6 +68,27 @@ class _MyHomnePageState extends State<MyHomePage> {
                 fontSize: 70,
               ),
             ),
+
+            /// 일반적인 버튼
+            ElevatedButton(
+              onPressed: () {
+                /// 버튼을 클릭하면 run 탭에 ElevatedButton 출력
+                print('ElevatedButton');
+              },
+              child: Text('ElevatedButton'),
+            ),
+
+            /// 글자로 된 버튼
+            TextButton(
+              onPressed: () {},
+              child: Text('TextButton'),
+            ),
+
+            /// 외곽선이 있는 버튼
+            OutlinedButton(
+              onPressed: () {},
+              child: Text('OutlinedButton'),
+            ),
           ],
         ),
       ),
