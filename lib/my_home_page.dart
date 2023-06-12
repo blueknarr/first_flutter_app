@@ -38,6 +38,10 @@ class _MyHomnePageState extends State<MyHomePage> {
               width: 100,
               height: 100,
             ),
+
+            /// SizedBox() : 위젯 간 공간을 만들고 싶을 때 사용한다. Container보다 성능이 좋다.
+            SizedBox(height: 30),
+            Container(height: 30),
             Text(
               '숫자',
 
