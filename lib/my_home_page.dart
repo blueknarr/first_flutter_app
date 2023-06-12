@@ -14,7 +14,15 @@ class MyHomePage extends StatefulWidget {
 class _MyHomnePageState extends State<MyHomePage> {
   /// 정수형 타입의 count 변수 0으로 초기화한다.
   int number = 10;
-  String text = '';
+  String _text = '';
+  final _textController = TextEditingController();
+
+  /// _textController 사용하고 나서 꼭 dispose() 해야한다. 메모리 문제
+  @override
+  void dispose() {
+    _textController.dispose();
+    super.dispose();
+  }
 
   /// Scaffold() : 앱을 만드는 뼈대가 되는 기본 위젯
   @override
@@ -92,6 +100,9 @@ class _MyHomnePageState extends State<MyHomePage> {
                   Expanded(
                     flex: 3,
                     child: TextField(
+                      /// _textController를 통해 입력값을 얻는다.
+                      controller: _textController,
+
                       /// 입력창 모양 꾸미기
                       decoration: InputDecoration(
                         labelText: '글자',
@@ -100,14 +111,16 @@ class _MyHomnePageState extends State<MyHomePage> {
 
                       /// 입력창에서 글자를 입력할 때마다 text에 들어온다.
                       onChanged: (text) {
-                        print(text);
+                        _text = text;
                       },
                     ),
                   ),
                   Expanded(
                     flex: 2,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        print(_textController.text);
+                      },
                       child: Text('login'),
                     ),
                   ),
