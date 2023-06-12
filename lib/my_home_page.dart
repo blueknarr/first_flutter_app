@@ -33,6 +33,11 @@ class _MyHomnePageState extends State<MyHomePage> {
           /// 메인 방향 가운데 정렬, Column : 위 ~ 아래, Row: 왼쪽 ~ 오른쪽
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Container(
+              color: Colors.red,
+              width: 100,
+              height: 100,
+            ),
             Text(
               '숫자',
 
@@ -89,11 +94,19 @@ class _MyHomnePageState extends State<MyHomePage> {
             ),
 
             /// 인터넷 상에 있는 사진을 가져온다.
-            Image.network(
-              'https://velog.velcdn.com/images/jintak0401/post/07c4b595-178e-4b51-ae7d-f545bc14cfdc/dart.png',
-              width: 100,
-              height: 100,
-              fit: BoxFit.cover,
+            Container(
+              color: Colors.red,
+
+              /// Padding을 이용해 사면을 빨간선으로 감싼다.
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.network(
+                  'https://velog.velcdn.com/images/jintak0401/post/07c4b595-178e-4b51-ae7d-f545bc14cfdc/dart.png',
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
 
             /// assets 폴더에 있는 사진을 가져온다.
@@ -102,7 +115,9 @@ class _MyHomnePageState extends State<MyHomePage> {
               width: 100,
               height: 100,
               fit: BoxFit.cover,
-            )
+            ),
+
+            /// 기본적으로 아무것도 없는 위젯
           ],
         ),
       ),
