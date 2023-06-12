@@ -87,6 +87,22 @@ class _MyHomnePageState extends State<MyHomePage> {
                 print(text);
               },
             ),
+
+            /// 인터넷 상에 있는 사진을 가져온다.
+            Image.network(
+              'https://velog.velcdn.com/images/jintak0401/post/07c4b595-178e-4b51-ae7d-f545bc14cfdc/dart.png',
+              width: 100,
+              height: 100,
+              fit: BoxFit.cover,
+            ),
+
+            /// assets 폴더에 있는 사진을 가져온다.
+            Image.asset(
+              'assets/dart.png',
+              width: 100,
+              height: 100,
+              fit: BoxFit.cover,
+            )
           ],
         ),
       ),
