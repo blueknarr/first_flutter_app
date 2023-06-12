@@ -86,17 +86,32 @@ class _MyHomnePageState extends State<MyHomePage> {
               ),
 
               /// 입력창
-              TextField(
-                /// 입력창 모양 꾸미기
-                decoration: InputDecoration(
-                  labelText: '글자',
-                  border: OutlineInputBorder(),
-                ),
+              Row(
+                children: [
+                  /// 균등하게 화면을 분배하거나 남은 공간을 다 사용한다.
+                  Expanded(
+                    flex: 3,
+                    child: TextField(
+                      /// 입력창 모양 꾸미기
+                      decoration: InputDecoration(
+                        labelText: '글자',
+                        border: OutlineInputBorder(),
+                      ),
 
-                /// 입력창에서 글자를 입력할 때마다 text에 들어온다.
-                onChanged: (text) {
-                  print(text);
-                },
+                      /// 입력창에서 글자를 입력할 때마다 text에 들어온다.
+                      onChanged: (text) {
+                        print(text);
+                      },
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text('login'),
+                    ),
+                  ),
+                ],
               ),
 
               /// 인터넷 상에 있는 사진을 가져온다.
@@ -122,8 +137,6 @@ class _MyHomnePageState extends State<MyHomePage> {
                 height: 100,
                 fit: BoxFit.cover,
               ),
-
-              /// 기본적으로 아무것도 없는 위젯
             ],
           ),
         ),
